@@ -1,0 +1,52 @@
+.app__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem;
+}
+.container__card{
+    width: 100%;
+    max-width: 350px;
+    border-radius: 0.3em;
+    overflow: hidden;
+    border: 1px solid rgba(108, 101, 101, 0.386);  
+    box-shadow: 0em 0em 1em rgba(154, 164, 189, 0.572);
+    padding: 1em;
+}
+.container__name{
+    margin-bottom: 0.5em;
+}
+.container__li{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+}
+.container__label{
+    padding-left: 1em;
+    color: #aaa9;
+    font-weight: 500;
+    text-transform: uppercase;    
+}
+.container__span{
+    font-weight: 500;
+}
+.container__btn{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+.btn-delete{
+    background-color: rgba(175, 42, 42, 0.805);
+    color: white;
+    border: none;
+    font-size: 1.02rem;
+    border-radius: 0.3rem;
+    padding: 0.3em;
+}
+.btn-edit{
+    border: 1px solid rgba(0, 0, 0, 0.391) ;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    padding: 0.3em;
+}
