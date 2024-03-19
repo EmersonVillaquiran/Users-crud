@@ -3,14 +3,16 @@ import './App.css';
 import useCrud from './hooks/useCrud';
 import FormUser from './components/FormUser';
 import UserCard from './components/UserCard';
+import Swal from 'sweetalert2';
+
 
 function App() {
     const [userEdit, setUserEdit] = useState();
     const [formIsClose, setFormIsClose] = useState(true);
     //Messages
-    const [createMessage, setCreateMessage] = useState('');
-    const [deleteMessage, setDeleteMessage] = useState('');
-    const [updateMessage, setUpdateMessage] = useState('');
+    // const [createMessage, setCreateMessage] = useState('');
+    // const [deleteMessage, setDeleteMessage] = useState('');
+    // const [updateMessage, setUpdateMessage] = useState('');
 
     const BASEURL = 'https://users-crud.academlo.tech';
     const [users, getUsers, createUsers, deleteUser, updateUser ] = useCrud(BASEURL);
@@ -32,26 +34,33 @@ function App() {
                 <h1 className='app__title'>Users</h1>
                 <button onClick={handleOpenForm} className='form__btn'>✚ Create new user</button>
             </header>
-            <div className='container__message'>
+            {/* <div className='container__message'>
             {createMessage && <p className='app__message'>{createMessage}</p>}
             {deleteMessage && <p className='app__message'>{deleteMessage}</p>}
             {updateMessage && <p className='app__message'>{updateMessage}</p>}
-            </div>
+            </div> */}
             <FormUser
                 createUsers={(path, data) => {
                     createUsers(path, data);
-                    setCreateMessage('✅User created successfully.');
-                    setTimeout(() => {
-                      setCreateMessage('');
-                    }, 3000);
+                    // setCreateMessage('');
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "✅User created successfully.",
+                        icon: "success"
+                      });
                 }}
                 userEdit={userEdit}
                 updateUser={(path, id, data) => {
                     updateUser(path, id, data);
-                    setUpdateMessage(`📄User edited successfully.`);
-                    setTimeout(() => {
-                      setUpdateMessage('');
-                    }, 3000);
+                    // setUpdateMessage('')
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "📄User edited successfully",
+                        icon: "success"
+                      });
+                    // setTimeout(() => {
+                    //   setUpdateMessage('');
+                    // }, 3000);
                 }}
                 setUserEdit={setUserEdit}
                 formIsClose={formIsClose}
