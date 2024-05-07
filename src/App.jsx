@@ -14,7 +14,7 @@ function App() {
     // const [deleteMessage, setDeleteMessage] = useState('');
     // const [updateMessage, setUpdateMessage] = useState('');
 
-    const BASEURL = 'https://users-crud.academlo.tech';
+    const BASEURL = 'https://user-crud-wfay.onrender.com';
     const [users, getUsers, createUsers, deleteUser, updateUser ] = useCrud(BASEURL);
   
     useEffect(() => {
